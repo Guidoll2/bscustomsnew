@@ -138,7 +138,7 @@ export default function Hero({ translations }: HeroProps) {
           {/* Right Visual */}
           <div className={`relative lg:h-[600px] h-[400px] ${isInView ? 'animate-slide-in-right' : 'opacity-0'}`}>
             {/* Main Image Container */}
-            <div className="relative h-full rounded-2xl overflow-hidden shadow-2xl shadow-[#7ab1e5]/20 -translate-y-6 lg:-translate-y-24">
+            <div className="relative h-full rounded-2xl overflow-hidden shadow-2xl shadow-[#7ab1e5]/20 -translate-y-6 lg:-translate-y-12">
               {/* Hero Image Placeholder - Ready for real image replacement */}
            <Image
               src="/autospuerto.png"
