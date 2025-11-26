@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useInView } from '@/app/hooks/useInView';
 
 interface ContactProps {
   translations?: {
@@ -18,6 +19,8 @@ interface ContactProps {
 }
 
 export default function Contact({ translations }: ContactProps) {
+  const { ref, isInView } = useInView({ margin: '0px 0px -100px 0px' });
+  
   const t = {
     title: translations?.title ?? 'Contacto profesional',
     subtitle:
@@ -85,12 +88,12 @@ export default function Contact({ translations }: ContactProps) {
   };
 
   return (
-    <section id="contacto" className="relative py-24 lg:py-32 bg-white">
+    <section ref={ref} id="contacto" className="relative py-24 lg:py-32 bg-white">
       <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 via-white to-gray-50/30 pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="max-w-3xl mb-12 lg:mb-16">
+        <div className={`max-w-3xl mb-12 lg:mb-16 ${isInView ? 'animate-fade-in-up' : 'opacity-0'}`}>
           <div className="w-16 h-1 bg-gradient-to-r from-[#7ab1e5] to-[#1760a2] mb-8" />
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
             {t.title}
@@ -99,13 +102,13 @@ export default function Contact({ translations }: ContactProps) {
         </div>
 
         {/* Main Grid: Form + Info Card */}
-        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
+        <div className={`grid lg:grid-cols-5 gap-8 lg:gap-12 ${isInView ? 'animate-fade-in-up animation-delay-100' : 'opacity-0'}`}>
           
           {/* Left Column: Contact Options + Form */}
           <div className="lg:col-span-3 space-y-8">
             
             {/* Quick Contact Options */}
-            <div className="space-y-4">
+            <div className={`space-y-4 ${isInView ? 'animate-slide-in-left' : 'opacity-0'}`}>
               <p className="text-sm text-gray-500">
                 Respuesta inmediata por WhatsApp, o contáctenos por teléfono y email.
               </p>
@@ -272,7 +275,7 @@ export default function Contact({ translations }: ContactProps) {
           </div>
 
           {/* Right Column: Info Card */}
-          <div className="lg:col-span-2">
+          <div className={`lg:col-span-2 ${isInView ? 'animate-slide-in-right' : 'opacity-0'}`}>
             <div className="sticky top-8 bg-gradient-to-br from-gray-50 to-gray-100/50 border border-gray-200/60 p-6 lg:p-8 rounded-2xl space-y-6">
               {/* Hours */}
               <div>

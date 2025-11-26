@@ -1,5 +1,7 @@
 'use client';
 
+import { useInView } from '@/app/hooks/useInView';
+
 interface AboutProps {
   translations: {
     title: string;
@@ -13,15 +15,17 @@ interface AboutProps {
 }
 
 export default function About({ translations }: AboutProps) {
+  const { ref, isInView } = useInView({ margin: '0px 0px -100px 0px' });
+
   return (
-    <section id="nosotros" className="relative py-24 lg:py-32 bg-white overflow-hidden">
+    <section ref={ref} id="nosotros" className="relative py-24 lg:py-32 bg-white overflow-hidden">
       {/* Subtle Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-50/50 pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Side - Image */}
-          <div className="relative">
+          <div className={`relative ${isInView ? 'animate-slide-in-left' : 'opacity-0'}`}>
             {/* Main Image Container */}
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl shadow-gray-900/10">
               {/* Replace this URL with your final image */}
@@ -71,7 +75,7 @@ export default function About({ translations }: AboutProps) {
           </div>
 
           {/* Right Side - Content */}
-          <div className="space-y-8">
+          <div className={`space-y-8 ${isInView ? 'animate-slide-in-right' : 'opacity-0'}`}>
             {/* Section Header */}
             <div>
               <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-[#7ab1e5]/10 to-[#1760a2]/10 rounded-full border border-[#7ab1e5]/20 mb-6">
@@ -95,7 +99,8 @@ export default function About({ translations }: AboutProps) {
               {translations.values.map((value, index) => (
                 <div
                   key={index}
-                  className="group relative bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 border border-gray-100 hover:border-[#7ab1e5]/30 transition-all duration-300 hover:shadow-lg"
+                  className={`group relative bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 border border-gray-100 hover:border-[#7ab1e5]/30 transition-all duration-300 hover:shadow-lg ${isInView ? 'animate-fade-in-up' : 'opacity-0'}`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="flex items-start space-x-4">
                     {/* Icon */}

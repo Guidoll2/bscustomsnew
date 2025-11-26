@@ -1,5 +1,7 @@
 'use client';
 
+import { useInView } from '@/app/hooks/useInView';
+
 interface ServicesProps {
   translations: {
     title: string;
@@ -12,6 +14,7 @@ interface ServicesProps {
 }
 
 export default function Services({ translations }: ServicesProps) {
+  const { ref, isInView } = useInView({ margin: '0px 0px -100px 0px' });
   const serviceImages = [
     'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80', // Customs/Documents
     'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80', // Consulting/Business
@@ -22,13 +25,13 @@ export default function Services({ translations }: ServicesProps) {
   ];
 
   return (
-    <section id="servicios" className="relative py-24 lg:py-32 bg-white">
+    <section ref={ref} id="servicios" className="relative py-24 lg:py-32 bg-white">
       {/* Subtle Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 via-white to-gray-50/30 pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header - Editorial Style */}
-        <div className="max-w-3xl mb-20 lg:mb-28">
+        <div className={`max-w-3xl mb-20 lg:mb-28 ${isInView ? 'animate-fade-in-up' : 'opacity-0'}`}>
           <div className="w-16 h-1 bg-gradient-to-r from-[#7ab1e5] to-[#1760a2] mb-8" />
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
             {translations.title}
@@ -45,7 +48,8 @@ export default function Services({ translations }: ServicesProps) {
               key={index}
               className={`group relative ${
                 index % 2 === 0 ? '' : 'lg:flex-row-reverse'
-              }`}
+              } ${isInView ? (index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right') : 'opacity-0'}`}
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                 {/* Image Side */}

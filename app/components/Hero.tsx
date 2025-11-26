@@ -1,5 +1,6 @@
 'use client';
 
+import { useInView } from '@/app/hooks/useInView';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -18,8 +19,10 @@ interface HeroProps {
 }
 
 export default function Hero({ translations }: HeroProps) {
+  const { ref, isInView } = useInView({ margin: '0px 0px -100px 0px' });
+
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-white pt-2">
+    <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden bg-white pt-2">
       {/* Background Gradient Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-1/2 -right-1/4 w-96 h-96 bg-gradient-to-br from-[#7ab1e5]/20 to-[#1760a2]/10 rounded-full blur-3xl" />
@@ -34,7 +37,29 @@ export default function Hero({ translations }: HeroProps) {
           {/* Left Content */}
           <div className="space-y-8">
             {/* Badge */}
-            <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-[#7ab1e5]/10 to-[#1760a2]/10 rounded-full border border-[#7ab1e5]/20">
+            <div className={`inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-[#7ab1e5]/10 to-[#1760a2]/10 rounded-full border border-[#7ab1e5]/20 ${isInView ? 'animate-fade-in-up' : 'opacity-0'}`}>
+              <div className="w-2 h-2 bg-gradient-to-r from-[#7ab1e5] to-[#1760a2] rounded-full animate-pulse" />
+              <span className="text-sm font-semibold bg-gradient-to-r from-[#1760a2] to-[#7ab1e5] bg-clip-text text-transparent">
+                International Trade Excellence
+              </span>
+            </div>
+
+            {/* Main Title */}
+            <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight ${isInView ? 'animate-fade-in-up animation-delay-100' : 'opacity-0'}`}>
+              <span className="text-gray-900">{translations.title.split(' ').slice(0, -2).join(' ')}</span>
+              {' '}
+              <span className="bg-gradient-to-r from-[#7ab1e5] to-[#1760a2] bg-clip-text text-transparent">
+                {translations.title.split(' ').slice(-2).join(' ')}
+              </span>
+            </h1>
+
+            {/* Subtitle */}
+            <p className={`text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl ${isInView ? 'animate-fade-in-up animation-delay-200' : 'opacity-0'}`}>
+              {translations.subtitle}
+            </p>
+
+            {/* CTA Buttons */}
+            <div className={`flex flex-col sm:flex-row gap-4 pt-4 ${isInView ? 'animate-fade-in-up animation-delay-300' : 'opacity-0'}`}>
               <div className="w-2 h-2 bg-gradient-to-r from-[#7ab1e5] to-[#1760a2] rounded-full animate-pulse" />
               <span className="text-sm font-semibold bg-gradient-to-r from-[#1760a2] to-[#7ab1e5] bg-clip-text text-transparent">
                 International Trade Excellence
@@ -56,7 +81,7 @@ export default function Hero({ translations }: HeroProps) {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className={`flex flex-col sm:flex-row gap-4 pt-4 ${isInView ? 'animate-fade-in-up animation-delay-300' : 'opacity-0'}`}>
               <Link
                 href="#contacto"
                 className="group relative px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-[#7ab1e5] to-[#1760a2] rounded-lg overflow-hidden shadow-lg shadow-[#7ab1e5]/25 hover:shadow-xl hover:shadow-[#7ab1e5]/35 transition-all duration-300"
@@ -104,7 +129,7 @@ export default function Hero({ translations }: HeroProps) {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200">
+            <div className={`grid grid-cols-3 gap-6 pt-8 border-t border-gray-200 ${isInView ? 'animate-fade-in-up animation-delay-400' : 'opacity-0'}`}>
               <div className="space-y-1">
                 <div className="text-3xl font-bold bg-gradient-to-r from-[#7ab1e5] to-[#1760a2] bg-clip-text text-transparent">
                   98.7%
@@ -133,9 +158,9 @@ export default function Hero({ translations }: HeroProps) {
           </div>
 
           {/* Right Visual */}
-          <div className="relative lg:h-[600px] h-[400px]">
+          <div className={`relative lg:h-[600px] h-[400px] ${isInView ? 'animate-slide-in-right' : 'opacity-0'}`}>
             {/* Main Image Container */}
-            <div className="relative h-full rounded-2xl overflow-hidden shadow-2xl shadow-[#7ab1e5]/20">
+            <div className="relative h-full rounded-2xl overflow-hidden shadow-2xl shadow-[#7ab1e5]/20 -translate-y-6 lg:-translate-y-24">
               {/* Hero Image Placeholder - Ready for real image replacement */}
            <Image
               src="/autospuerto.png"
@@ -150,7 +175,7 @@ export default function Hero({ translations }: HeroProps) {
             </div>
 
             {/* Static Badge: ISO 9001 - Top Left */}
-            <div className="hidden lg:block absolute top-6 left-6 bg-white rounded-lg shadow-lg shadow-[#7ab1e5]/10 p-3 transition-all duration-300 hover:scale-102 hover:shadow-md">
+            <div className="hidden lg:block absolute top-0 left-6 bg-white rounded-lg shadow-lg shadow-[#7ab1e5]/10 p-3 transition-all duration-300 hover:scale-102 hover:shadow-md">
               <div className="flex items-center space-x-2.5">
                 <div className="w-10 h-10 bg-gradient-to-br from-[#7ab1e5] to-[#1760a2] rounded-lg flex items-center justify-center flex-shrink-0">
                   <svg
@@ -174,30 +199,6 @@ export default function Hero({ translations }: HeroProps) {
               </div>
             </div>
 
-            {/* Static Badge: 24/7 Response - Bottom Right */}
-            <div className="hidden lg:block absolute bottom-6 right-6 bg-white rounded-lg shadow-lg shadow-[#7ab1e5]/10 p-3 transition-all duration-300 hover:scale-102 hover:shadow-md">
-              <div className="flex items-center space-x-2.5">
-                <div className="w-10 h-10 bg-gradient-to-br from-[#1760a2] to-[#7ab1e5] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <svg
-                    className="w-5 h-5 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <div className="text-xs text-gray-500 font-medium leading-tight">Response</div>
-                  <div className="text-sm font-bold text-gray-900 leading-tight">24/7</div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
