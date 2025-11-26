@@ -60,28 +60,6 @@ export default function Hero({ translations }: HeroProps) {
 
             {/* CTA Buttons */}
             <div className={`flex flex-col sm:flex-row gap-4 pt-4 ${isInView ? 'animate-fade-in-up animation-delay-300' : 'opacity-0'}`}>
-              <div className="w-2 h-2 bg-gradient-to-r from-[#7ab1e5] to-[#1760a2] rounded-full animate-pulse" />
-              <span className="text-sm font-semibold bg-gradient-to-r from-[#1760a2] to-[#7ab1e5] bg-clip-text text-transparent">
-                International Trade Excellence
-              </span>
-            </div>
-
-            {/* Main Title */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-              <span className="text-gray-900">{translations.title.split(' ').slice(0, -2).join(' ')}</span>
-              {' '}
-              <span className="bg-gradient-to-r from-[#7ab1e5] to-[#1760a2] bg-clip-text text-transparent">
-                {translations.title.split(' ').slice(-2).join(' ')}
-              </span>
-            </h1>
-
-            {/* Subtitle */}
-            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl">
-              {translations.subtitle}
-            </p>
-
-            {/* CTA Buttons */}
-            <div className={`flex flex-col sm:flex-row gap-4 pt-4 ${isInView ? 'animate-fade-in-up animation-delay-300' : 'opacity-0'}`}>
               <Link
                 href="#contacto"
                 className="group relative px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-[#7ab1e5] to-[#1760a2] rounded-lg overflow-hidden shadow-lg shadow-[#7ab1e5]/25 hover:shadow-xl hover:shadow-[#7ab1e5]/35 transition-all duration-300"
