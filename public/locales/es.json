@@ -1,0 +1,100 @@
+{
+  "header": {
+    "nav": {
+      "about": "Nosotros",
+      "services": "Servicios",
+      "process": "Proceso",
+      "contact": "Contacto"
+    },
+    "cta": "Consultar"
+  },
+  "hero": {
+    "title": "Soluciones Globales en Comercio Exterior",
+    "subtitle": "Especializados en la importación y exportación de vehículos de transporte, maquinaria agrícola y maquinaria vial. Conectamos Argentina con el mundo a través de servicios aduaneros de excelencia.",
+    "ctaPrimary": "Iniciar consulta",
+    "ctaSecondary": "Ver servicios",
+    "stats": {
+      "experience": "Tasa de éxito aduanero",
+      "countries": "Tiempo promedio despacho",
+      "operations": "Cumplimiento normativo"
+    }
+  },
+  "services": {
+    "title": "Servicios Especializados en Comercio Exterior",
+    "subtitle": "Soluciones integrales en gestión aduanera diseñadas para optimizar cada etapa de sus operaciones de importación y exportación, garantizando cumplimiento normativo y eficiencia operativa.",
+    "items": [
+      {
+        "title": "Despacho Aduanero Integral",
+        "description": "Tramitación completa de importaciones y exportaciones con gestión documental, clasificación arancelaria y representación ante autoridades aduaneras."
+      },
+      {
+        "title": "Consultoría Normativa",
+        "description": "Asesoramiento estratégico en regulaciones de comercio exterior, tratados internacionales y optimización de regímenes especiales para reducción de costos arancelarios."
+      },
+      {
+        "title": "Logística de Cargas Especiales",
+        "description": "Coordinación de transporte internacional para maquinaria agrícola, equipamiento vial y vehículos de gran porte con manejo de permisos y documentación técnica."
+      },
+      {
+        "title": "Certificaciones y Homologaciones",
+        "description": "Gestión de certificados de origen, habilitaciones técnicas, inspecciones pre-embarque y cumplimiento de normativas sanitarias y fitosanitarias."
+      },
+      {
+        "title": "Gestión de Riesgo Aduanero",
+        "description": "Auditorías preventivas, clasificación correcta de mercaderías y estrategias de mitigación para minimizar demoras, sanciones y costos no previstos."
+      },
+      {
+        "title": "Seguimiento en Tiempo Real",
+        "description": "Monitoreo digital de cada operación desde el embarque hasta la liberación final, con reportes de estado y notificaciones proactivas de avance."
+      }
+    ]
+  },
+  "about": {
+    "title": "Experiencia que Impulsa Resultados",
+    "subtitle": "Más de una década conectando Argentina con el mundo",
+    "description": "En BS Customs brindamos gestión aduanera y logística internacional con precisión y acompañamiento experto en cada operación. Nos especializamos en la importación y exportación de vehículos de transporte, maquinaria agrícola y equipamiento vial, garantizando cumplimiento normativo y eficiencia operativa en cada etapa del proceso.",
+    "values": [
+      {
+        "title": "Precisión Operativa",
+        "description": "Procesos documentados y auditorías preventivas que minimizan riesgos y demoras."
+      },
+      {
+        "title": "Cumplimiento Garantizado",
+        "description": "100% de nuestras operaciones cumplen con normativas locales e internacionales."
+      },
+        {
+          "title": "Acompañamiento Continuo",
+          "description": "Seguimiento personalizado desde el primer contacto hasta la liberación final."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Contacto",
+      "subtitle": "Estamos listos para asistirlo en su operación de comercio exterior. Contáctenos por el canal que prefiera.",
+      "cta": "Iniciar consulta",
+      "form": {
+        "nameLabel": "Nombre completo",
+        "companyLabel": "Empresa (opcional)",
+        "emailLabel": "Correo electrónico",
+        "phoneLabel": "Teléfono",
+        "messageLabel": "Mensaje",
+        "namePlaceholder": "Ej. Juan Pérez",
+        "companyPlaceholder": "Ej. Transporte SA",
+        "emailPlaceholder": "ejemplo@dominio.com",
+        "phonePlaceholder": "+54 9 11 1234 5678",
+        "messagePlaceholder": "Describa brevemente su consulta o requerimiento",
+        "submit": "Previsualizar mensaje",
+        "copy": "Copiar mensaje",
+        "openMail": "Abrir en correo"
+      },
+      "whatsapp": "WhatsApp",
+      "call": "Llamar",
+      "email": "Email",
+      "hoursTitle": "Horario de atención",
+      "hours": "Lunes a Viernes — 9:00 a 18:00 (ART)",
+      "addressTitle": "Dirección",
+      "address": "Formosa 419 Ezeiza, Buenos Aires, Argentina",
+      "attentionTitle": "Atención",
+      "attention": "Respuestas en menos de 24 horas por email y en minutos por WhatsApp."
+    }
+  }

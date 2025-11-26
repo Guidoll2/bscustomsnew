@@ -10,6 +10,9 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Custom utilities for BS Customs */
+  --scale-102: 1.02;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +26,9 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom utility classes */
+.hover\:scale-102:hover {
+  transform: scale(1.02);
 }

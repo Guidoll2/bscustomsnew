@@ -1,0 +1,100 @@
+{
+  "header": {
+    "nav": {
+      "about": "About Us",
+      "services": "Services",
+      "process": "Process",
+      "contact": "Contact"
+    },
+    "cta": "Get Quote"
+  },
+  "hero": {
+    "title": "Global Solutions in International Trade",
+    "subtitle": "Specialized in the import and export of transport vehicles, agricultural machinery, and road equipment. Connecting Argentina with the world through excellence in customs services.",
+    "ctaPrimary": "Start consultation",
+    "ctaSecondary": "View services",
+    "stats": {
+      "experience": "Customs success rate",
+      "countries": "Average clearance time",
+      "operations": "Regulatory compliance"
+    }
+  },
+  "services": {
+    "title": "Specialized International Trade Services",
+    "subtitle": "Comprehensive customs management solutions designed to optimize every stage of your import and export operations, ensuring regulatory compliance and operational efficiency.",
+    "items": [
+      {
+        "title": "Full Customs Clearance",
+        "description": "Complete processing of imports and exports with documentation management, tariff classification, and representation before customs authorities."
+      },
+      {
+        "title": "Regulatory Consulting",
+        "description": "Strategic advisory on foreign trade regulations, international treaties, and optimization of special regimes for tariff cost reduction."
+      },
+      {
+        "title": "Special Cargo Logistics",
+        "description": "International transport coordination for agricultural machinery, road equipment, and oversized vehicles with permit and technical documentation handling."
+      },
+      {
+        "title": "Certifications and Approvals",
+        "description": "Management of certificates of origin, technical authorizations, pre-shipment inspections, and compliance with sanitary and phytosanitary standards."
+      },
+      {
+        "title": "Customs Risk Management",
+        "description": "Preventive audits, correct merchandise classification, and mitigation strategies to minimize delays, penalties, and unforeseen costs."
+      },
+      {
+        "title": "Real-Time Tracking",
+        "description": "Digital monitoring of each operation from shipment to final clearance, with status reports and proactive progress notifications."
+      }
+    ]
+  },
+  "about": {
+    "title": "Experience that Drives Results",
+    "subtitle": "Over a decade connecting Argentina with the world",
+    "description": "At BS Customs we provide customs management and international logistics with precision and expert support in every operation. We specialize in the import and export of transport vehicles, agricultural machinery, and road equipment, ensuring regulatory compliance and operational efficiency at every stage of the process.",
+    "values": [
+      {
+        "title": "Operational Precision",
+        "description": "Documented processes and preventive audits that minimize risks and delays."
+      },
+      {
+        "title": "Guaranteed Compliance",
+        "description": "100% of our operations comply with local and international regulations."
+      },
+      {
+        "title": "Continuous Support",
+        "description": "Personalized tracking from first contact to final clearance."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "We are ready to assist you in your international trade operation. Contact us through your preferred channel.",
+    "cta": "Start consultation",
+    "form": {
+      "nameLabel": "Full name",
+      "companyLabel": "Company (optional)",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone",
+      "messageLabel": "Message",
+      "namePlaceholder": "e.g. John Doe",
+      "companyPlaceholder": "e.g. Logistics Inc",
+      "emailPlaceholder": "name@domain.com",
+      "phonePlaceholder": "+54 9 11 1234 5678",
+      "messagePlaceholder": "Briefly describe your request or requirement",
+      "submit": "Preview message",
+      "copy": "Copy message",
+      "openMail": "Open in mail"
+    },
+    "whatsapp": "WhatsApp",
+    "call": "Call",
+    "email": "Email",
+    "hoursTitle": "Opening hours",
+    "hours": "Monday to Friday — 9:00 to 18:00 (ART)",
+    "addressTitle": "Address",
+    "address": "Formosa 419 Ezeiza, Buenos Aires, Argentina",
+    "attentionTitle": "Response",
+    "attention": "Replies within 24 hours by email and minutes via WhatsApp."
+  }
+}
